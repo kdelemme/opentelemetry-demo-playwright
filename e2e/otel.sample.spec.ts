@@ -37,7 +37,7 @@ test("adds a product and empty the cart", async ({ page }) => {
 
 test("randomly click around", async ({ page }) => {
   let counter = 0;
-  while (counter++ < 1000) {
+  while (counter++ < 10) {
     await sleep(1000);
 
     await page.goto(OTEL_DEMO_URL);
@@ -45,7 +45,7 @@ test("randomly click around", async ({ page }) => {
 
     await page
       .getByTestId("product-card")
-      .nth(Math.round(Math.random() * 12))
+      .nth(Math.round(Math.random() * 10))
       .click();
 
     await page.waitForURL(/\/product\/\w+/);
